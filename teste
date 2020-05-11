@@ -1,0 +1,349 @@
+import math
+print('\n____________________________Calculadora Universal____________________________\n\n')
+r = 1
+while r == 1:
+  tipodecalculo=int(input('\nQual tipo de cálculo deseja realiazar:\n1) Aritmético\n2) Geométrico\n3) Converções\nDigite aqui sua resposta: '))
+  if(tipodecalculo > 3):
+    print('\nCálculo não encontrado, tente novamente!\n')
+  if(tipodecalculo == 1):
+    operador=int(input('\nO que deseja calcular:\n1) Soma\n2) Subtração\n3) Multiplicação\n4) Divisão\n5) Raiz\n6) Potência\n7) Fatorial\n8) Progeção Aritmética\n9) Bhaskara\nDigite aqui a resposta: '))
+    if(operador > 9):
+      print('\nOperador não encontrado, tente novamente!\n')
+    if(operador == 1):
+      print('\nDigite dois números para somá-los:\n')
+      n1=float(input('Digite o primeiro número: '))
+      n2=float(input('Digite o segundo número: '))
+      soma=n1+n2
+      print('A soma de {} e {} é {:.2f}'. format(n1, n2, soma))
+    if(operador == 2):
+      print('\nDigite dois números para subtraí-los:\n')
+      n1=float(input('Digite o primeiro número: '))
+      n2=float(input('Digite o segundo número: '))
+      subtração=n1-n2
+      print('A subtração entre {} e {} é {:.2f}'. format(n1, n2, subtração))  
+    if(operador == 3):
+      print('\nDigite dois números para multiplicá-los:\n')
+      n1=float(input('Digite o primeiro número: '))
+      n2=float(input('Digite o segundo número: '))
+      multiplicação=n1*n2
+      print('A multiplicação entre {} e {} é {:.2f}'. format(n1, n2, multiplicação))
+    if(operador == 4):
+      print('\nDigite dois números para dividí-los:\n')
+      n1=float(input('Digite o primeiro número: '))
+      n2=float(input('Digite o segundo número: '))
+      divisão=n1/n2
+      print('A divisão entre {} e {} é {}'. format(n1, n2, divisão))
+    if(operador == 5):
+      número=int(input('\nDigite um número para calcular a sua raiz: '))
+      raiz=math.sqrt(número)
+      print('A raiz de {} é {}'. format(número, raiz))
+    if(operador == 6 ):
+      print('\nDigite uma base e um expoente para calcular sua potência:\n')
+      n1=float(input('Digite a base: '))
+      n2=float(input('Digite o expoente: '))
+      potência=math.pow(n1, n2)
+      print('A potência de base {} e expoente {} é {:.3f}'. format(n1, n2, potência))
+    if(operador == 7):
+      número=int(input('\nDigite um número para calcular o seu fatorial: '))
+      fatorial=math.factorial(número)
+      print('O fatorial de {} é {}'. format(número, fatorial))
+    if(operador == 8):
+      count=0
+      soma=0
+      número=int(input('\nDigite até qual número deseja verificar sua progeção aritmética: '))
+      passo=int(input('Digite a razão da sequência: '))
+      termo1=int(input('Digite o primeiro termo da sequência: '))
+      for c in range(termo1, número+1, passo):
+        print('{}, '. format(c), end = ' ')
+        count=count+1
+        soma=soma+c
+      print('\nA quantidade de termos da PA é: {}, e sua soma é igual a {}'. format(count, soma))
+    if(operador == 9):
+      print('\nDigite valores de a, b e c para calcular x1 e x2:')
+      a=int(input('Digite o valor de A: '))
+      b=int(input('Digite o valor de B: '))
+      c=int(input('Digite o valor de C: '))
+      delta=(b**2)-(4*a*c)
+      print('\nO delta é igual a {}'. format(delta))
+      if(delta < 0):
+        print('O delta deu negativo, operação inválida')
+      else:
+        delta=(b**2)-(4*a*c)
+        raiz=math.sqrt(delta)
+        x1=(-b+raiz)/(2*a)
+        x2=(-b-raiz)/(2*a)
+        print('E x1 = {} e x2 = {}'. format(x1, x2))
+
+  if(tipodecalculo == 2):
+    operador=int(input('\nDigite o que deseja calcular: \n1) Área\n2) Volume\nDigite aqui a resposta: '))
+    if(operador > 2):
+      print('\nOperador não encontrado, tente novamente!\n')
+    if(operador == 1):
+      tipodearea=int(input('\nDeseja calcular a área de qual figura geométrica?\n1) Retângulo\n2) Triângulo\n3) Trapézio\n4) Círculo\nDigite aqui a sua resposta: '))
+      if(tipodearea > 4):
+        print('\nTipo de área não encontrado, tente novamente!\n')
+      if(tipodearea == 1):
+        print('\nCálculo de área de retângulo\nDigite as dimenções do quadrado:\n')
+        lado1=float(input('Digite o valor do primeiro lado: '))
+        lado2=float(input('Digita o valor do segundo lado: '))
+        arearetângulo=lado1*lado2
+        print('A ádre do quadrado com dimenções {} por {} é {}'. format(lado1, lado2, arearetângulo))
+      if(tipodearea == 2):
+        print('\nCálculo de área de triângulo\nDigite as dimenções do triângulo:\n')
+        base=float(input('Digite o valor da base: '))
+        altura=float(input('Digite o valor da altura: '))
+        areatriângulo=(base*altura)/2
+        print('A área do triângulo de base de {} e de altura de {} é {}'. format(base, altura, areatriângulo))
+      if(tipodearea == 3):
+        print('\nCálculo de área de trapézio\nDigite as dimenções do trapézio:\n')
+        basemenor=float(input('Digite o valor da base menor: '))
+        basemaior=float(input('Digite o valor da base maior: '))
+        altura=float(input('Digite o valor da altura: '))
+        areatrapézio=((basemaior+basemenor)*altura)/2
+        print('A área do trapézio de base menor de {}, base maior de {} e altura de {} é {:.2f}'. format(basemenor, basemaior, altura, areatrapézio))
+      if(tipodearea == 4):
+        print('\nCálculo de área de círculo\nDigite as dimenções do círculo:\n')
+        raio=float(input('Digite o valor do raio: '))
+        areacírculo=(3.14*(math.pow(raio,2)))
+        print('A área do círculo de raio {} é aproximadamente {:.2f}'. format(raio, areacírculo))
+    if(operador == 2):
+      tipodevolume=int(input('\nDeseja calcular o volume de qual sólido geométrico?\n1) Paralelepípedo\n2) Pirâmide\n3) Cone\n4) Cilíndro\n5) Esfera\nDigite aqui a sua resposta: '))
+      if(tipodevolume > 5):
+        print('\nTipo de volume não encontrado, tente novamente!\n')
+      if(tipodevolume == 1):
+        print('\nCálculo do volume do paralelepipedo\nDigite as dimenções do paralelepípedo:\n')
+        aresta1=float(input('Digite o valor da primeira aresta: '))
+        aresta2=float(input('Digite o valor da segunda aresta: '))
+        aresta3=float(input('Digite o valor da terceira aresta: '))
+        volumedoparalelepipedo=aresta1*aresta2*aresta3
+        print('O volume do paralelepípedo com arestas {}, {} e {} é {:.2f}'. format(aresta1, aresta2, aresta3, volumedoparalelepipedo))
+      if(tipodevolume == 2):
+        print('\nCálculo do volume da pirâmide\nDigite as dimenções da pirâmide:\n')
+        lado1=float(input('Digite o valor do primeiro lado da base da pirâmide: '))
+        lado2=float(input('Digite o valor do segundo lado da base da pirâmide: '))
+        altura=float(input('Digite o valor da altura da pirâmide: '))
+        volumedapirâmide=(((lado1*lado2)*altura)/3)
+        print('O volume da pirâmide de base {} por {} com altura de {} é {:.2f}'. format(lado1, lado2, altura, volumedapirâmide))
+      if(tipodevolume == 3):
+        print('\nCálculo do volume do cone\nDigite as dimenções do cone:\n')
+        raiodabase=float(input('Digite o valor do raio da base: '))
+        altura=float(input('Digite o valor da altura do cone: '))
+        volumedocone=((3.14*(math.pow(raiodabase, 2))*altura)/3)
+        print('O volume do cone com raio da base de {} e altura de {} é aproximadamente {:.2f}'. format(raiodabase, altura, volumedocone))
+      if(tipodevolume == 4):
+        print('\nCálculo do volume do Cilíndro\nDigite as dimenções do cilíndro:\n')
+        raio=float(input('Digite o valor do raio: '))
+        altura=float(input('Digite o valor da altura do cilíndro: '))
+        volumedocilíndro=(3.14*(math.pow(raio, 2))*altura)
+        print('O volume do cilídro com raio de {} e altura de {} é aproximadamente {:.2f}'. format(raio, altura, volumedocilíndro))
+      if(tipodevolume == 5):
+        print('\nCálculo do volume da Esfera\nDigite as dimenção da esfera:\n')
+        raio=float(input('Digite o valor do raio: '))
+        volumedaesfera=((4*3.14*(math.pow(raio, 3)))/3)
+        print('O volume da esfera com raio de {} é aproximadamente {:.2f}'. format(raio, volumedaesfera))
+
+  if(tipodecalculo == 3):
+    operador=int(input('\nDigite o que deseja converter: \n1) Distâncias\n2) Pesos\n3) Temperaturas\n4) Bases Numéricas\nDigite aqui sua resposta: '))
+    if(operador > 4):
+      print('\nTipo de converção não encontrada, tente novamente!\n')
+    if(operador == 1):
+      tipodedistância=int(input('\nDigite qual grandeza deseja converter: \n1) Quilômestros\n2) Metros\n3) Centímestros\nDigite aqui sua resposta: '))
+      if(tipodedistância > 3):
+        print('\nTipo de grandeza não encontrada, tente novamente!\n')
+      if(tipodedistância == 1):
+        converções=int(input('\nQuer converter quilômetros para: \n1) Milhas\n2) Pés\n3) Metros\nDigite aqui sua resposta: '))
+        if(converções > 3):
+          print('\nTipo de converção não encontrada, tente novamente!\n')
+        if(converções == 1):
+          print('\nConverção de quilômetrôs para milhas:\n')
+          quilômetros=float(input('Digite quantos quilômestros: '))
+          converção1=(quilômetros/1.609)
+          print('A converção de {} quilômestos para milhas é aproximadamente {:.3f}'. format(quilômetros, converção1))
+        if(converções == 2):
+          print('\nConverção de quilômetrôs para pés:\n')
+          quilômetros=float(input('Digite quantos quilômestros: '))
+          converção2=(quilômetros*3280.80)
+          print('A converção de {} quilômestos para pés é aproximadamente {:.2f}'. format(quilômetros, converção2))
+        if(converções == 3):
+          print('\nConverção de quilômetrôs para metros:\n')
+          quilômetros=float(input('Digite quantos quilômestros: '))
+          converção3=(quilômetros*1000)
+          print('A converção de {} quilômestos para metros é {:.2f}'. format(quilômetros, converção3))
+      if(tipodedistância == 2):
+        converções=int(input('\nQuer converter metros para: \n1) Pés\n2) Quilômetros\n3) Centímetros\nDigite aqui sua resposta: '))
+        if(converções > 3):
+          print('\nTipo de converção não encontrada, tente novamente!\n')
+        if(converções == 1):
+          print('\nConverção de metros para pés:\n')
+          metros=float(input('Digite quantos metros: '))
+          converção1=(metros*3.28080)
+          print('A converção de {} metros para pés é aproximadamente {:.3f}'. format(metros, converção1))
+        if(converções == 2):
+          print('\nConverção de metros para quilômetros:\n')
+          metros=float(input('Digite quantos metros: '))
+          converção2=(metros/1000)
+          print('A converção de {} metros para quilômetros é {:.2f}'. format(metros, converção2))
+        if(converções == 3):
+          print('\nConverção de metros para centímetros:\n')
+          metros=float(input('Digite quantos metros: '))
+          converção3=(metros*100)
+          print('A converção de {} metros para centímetros é {:.2f}'. format(metros, converção3))
+      if(tipodedistância == 3):
+        converções=int(input('\nQuer converter centímetros para: \n1) Pés\n2) Polegadas\n3) Metros\nDigite aqui sua resposta: '))
+        if(converções > 3):
+          print('\nTipo de converção não encontrada, tente novamente!\n')
+        if(converções == 1):
+          print('\nConverção de centímetros para pés:\n')
+          centímetros=float(input('Digite quantos centímetros: '))
+          converção1=(centímetros*0.0328080)
+          print('A converção de {} centímetros para pés é aproximadamente {:.3f}'. format(centímetros, converção1))
+        if(converções == 2):
+          print('\nConverção de centímetros para polegadas:\n')
+          centímetros=float(input('Digite quantos centímetros: '))
+          converção2=(centímetros*0.393701)
+          print('A converção de {} centímetros para polegadas é aproximadamente {:.3f}'. format(centímetros, converção2))
+        if(converções == 3):
+          print('\nConverção de centímetros para metros:\n')
+          centímetros=float(input('Digite quantos centímetros: '))
+          converção3=(centímetros/100)
+          print('A converção de {} centímetros para metros é {:.2f}'. format(centímetros, converção3))
+
+    if(operador == 2):
+      tipodepeso=int(input('\nDigite qual grandeza deseja converter: \n1) Toneladas\n2) Quilos\n3) Gramas\n4) Libras\nDigite aqui sua resposta: '))
+      if(tipodepeso > 4):
+        print('\nTipo de grandeza não encontrada, tente novamente!\n')
+      if(tipodepeso == 1):
+        converções=int(input('\nQuer converter toneladas para: \n1) Quilos\n2) Libras\n3) Onça\nDigite aqui sua resposta: '))
+        if(converções > 3):
+          print('\nTipo de converção não encontrada, tente novamente!\n')
+        if(converções == 1): 
+          print('\nConverção de toneladas para quilos:\n')
+          toneladas=float(input('Digite quantas toneladas: '))
+          converção1=(toneladas*1000)
+          print('A converção de {} toneladas para quilos é {:.2f}'. format(toneladas, converção1))
+        if(converções == 2):
+          print('\nConverção de toneladas para libras:\n')
+          toneladas=float(input('Digite quantas toneladas: '))
+          converção2=(toneladas*2204.60)
+          print('A converção de {} toneladas para libras é aproximadamente {:.3f}'. format(toneladas, converção2))
+        if(converções == 3):
+          print('\nConverção de toneladas para onça:\n')
+          toneladas=float(input('Digite quantas toneladas: '))
+          converção3=(toneladas*35274)
+          print('A converção de {} toneladas para onça é aproximadamente {:.2f}'. format(toneladas, converção3))
+      if(tipodepeso == 2):
+        converções=int(input('\nQuer converter quilos para: \n1) Toneladas\n2) Gramas\n3) Libras\nDigite aqui sua resposta: '))
+        if(converções > 3):
+          print('\nTipo de converção não encontrada, tente novamente!\n')
+        if(converções == 1):
+          print('\nConverção de quilos para toneladas:\n')
+          quilos=float(input('Digite quantos quilos: '))
+          converção1=(quilos/1000)
+          print('A converção de {} quilos para toneladas é {:.2f}'. format(quilos, converção1))
+        if(converções == 2):
+          print('\nConverção de quilos para gramas:\n')
+          quilos=float(input('Digite quantos quilos: '))
+          converção2=(quilos*1000)
+          print('A converção de {} quilos para gramas é {:.2f}'. format(quilos, converção2))
+        if(converções == 3):
+          print('\nConverção de quilos para libras:\n')
+          quilos=float(input('Digite quantos quilos: '))
+          converção3=(quilos*2.20460)
+          print('A converção de {} quilos para libras é aproximadamente {:.3f}'. format(quilos, converção3))
+      if(tipodepeso == 3):
+        converções=int(input('\nQuer converter gramas para: \n1) Quilos\n2) Miligramas\n3) Libras\nDigite aqui sua resposta: '))
+        if(converções > 3):
+          print('\nTipo de converção não encontrada, tente novamente!\n')
+        if(converções == 1):
+          print('\nConverção de gramas para quilos:\n')
+          gramas=float(input('Digite quantas gramas: '))
+          converção1=(gramas/1000)
+          print('A converção de {} gramas para quilos é {:.2f}'. format(gramas, converção1))
+        if(converções == 2):
+          print('\nConverção de gramas para miligramas:\n')
+          gramas=float(input('Digite quantas gramas: '))
+          converção2=(gramas*1000)
+          print('A converção de {} gramas para miligramas é {:.2f}'. format(gramas, converção2))
+        if(converções == 3):
+          print('\nConverção de quilos para libras:\n')
+          gramas=float(input('Digite quantas gramas: '))
+          converção3=(gramas*0.00220460)
+          print('A converção de {} gramas para libras é aproximadamente {:.3f}'. format(gramas, converção3))
+      if(tipodepeso == 4):
+        converções=int(input('\nQuer converter libras para: \n1) Quilos\n2) Gramas\nDigite aqui sua resposta: ')) 
+        if(converções > 2):
+          print('\nTipo de converção não encontrada, tente novamente!\n')   
+        if(converções == 1):  
+          print('\nConverção de libras para quilos:\n') 
+          libras=float(input('Digite quantas libras: '))
+          converção1=(libras*0.453592)
+          print('A converção de {} libras para quilos é aproximadamente {:.4f}'. format(libras, converção1))
+        if(converções == 2): 
+          print('\nConverção de libras para gramas:\n')
+          libras=float(input('Digite quantas libras: '))
+          converção2=(libras*453.592)
+          print('A converção de {} libras para gramas é aproximadamente {:.3f}'. format(libras, converção2))
+
+    if(operador == 3):
+      tipodetemperatura=int(input('\nDigite qual grandeza deseja converter: \n1) Celsius\n2) Kelvin\n3) Fahrenheit\nDigite aqui sua resposta: '))
+      if(tipodetemperatura > 3):
+        print('\nTipo de grandeza não encontrada, tente novamente!\n')
+      if(tipodetemperatura == 1):
+        converções=int(input('\nQuer converter celsius para: \n1) Kelvin\n2) Fahrenheit\nDigite aqui sua resposta: '))
+        if(converções > 2):
+          print('\nTipo de converção não encontrada, tente novamente!\n')
+        if(converções == 1):
+          print('\nConverção de celsius para kelvins:\n')
+          celsius=float(input('Digite quantos celsius: '))
+          converção1=(celsius+273.15)
+          print('A converção de {} celsius para kelvis é {:.2f}'. format(celsius, converção1))
+        if(converções == 2):
+          print('\nConverção de celsius para fahrenheit:\n')
+          celsius=float(input('Digite quantos celsius: '))
+          converção2=(((celsius)*9)/5)+32
+          print('A converção de {} celsius para fahrenheit é {:.2f}'. format(celsius, converção2))
+      if(tipodetemperatura == 2):
+        converções=int(input('\nQuer converter kelvins para: \n1) Celsius\n2) Fahrenheit\nDigite aqui sua resposta: '))
+        if(converções > 2):
+          print('\nTipo de converção não encontrada, tente novamente!\n')
+        if(converções == 1):
+          print('\nConverção de kelvins para celsius:\n')
+          kelvins=float(input('Digite quantos kelvins: '))
+          converção1=(kelvins-273.15)
+          print('A converção de {} kelvins para celsius é {:.2f}'. format(kelvins, converção1))
+        if(converções == 2):
+          print('\nConverção de kelvins para fahrenheit:\n')
+          kelvins=float(input('Digite quantos kelvins: '))
+          converção2=((kelvins-273.15)*1.8)+32
+          print('A converção de {} kelvins para fahrenheit é {:.2f}'. format(kelvins, converção2))
+      if(tipodetemperatura == 3):
+        converções=int(input('\nQuer converter fahrenheit para: \n1) Celsius\n2) Kelvin\nDigite aqui sua resposta: '))
+        if(converções > 2):
+          print('\nTipo de converção não encontrada, tente novamente!\n')
+        if(converções == 1):
+          print('\nConverção de fahrenheit para celsius:\n')
+          fahrenheit=float(input('Digite quantos fahrenheit: '))
+          converção1=(fahrenheit-32)/1.8
+          print('A converção de {} fahrenheit para celsius é aproximadamente {:.3f}'. format(fahrenheit, converção1))
+        if(converções == 2):
+          print('\nConverção de fahrenheit para kelvins:\n')
+          fahrenheit=float(input('Digite quantos fahrenheit: '))
+          converção2=((fahrenheit-32)*0.55)+273.15
+          print('A converção de {} fahrenheit para kelvins é aproximadamente {:.3f}'. format(fahrenheit, converção2))
+
+    if(operador == 4):
+      número=int(input('\nDigite um número que deseja converter: '))
+      converção=int(input('\nDigite a base de converção desejada: \n1) Binária\n2) Octaldecimal\n3) Hexadecimal\nDigite aqui a sua resposta: '))
+      if(converção > 3):
+        print('\nTipo de converção não encontrada, tente novamente!\n')
+      if(converção == 1):
+        print('\nO número {} convertido em binário é {}'. format(número, bin(número)[2:]))
+      if(converção == 2):
+        print('\nO número {} convertido em octadecimal é {}'. format(número, oct(número)[2:]))
+      if(converção == 3):
+        print('\nO número {} convertido em hexadecimal é {}'. format(número, hex(número)[2:]))
+  r=int(input('\nDeseja contiunar?\n1) Sim\n2) Não\nDigite aqui a sua resposta: '))
+print('\n\n\n\n\n')
+print('_'*78)
+print('Calculadora Universal desenvolvida por: Guilherme Tomaselli Borchardt\n')
+print('Maio de 2020')
